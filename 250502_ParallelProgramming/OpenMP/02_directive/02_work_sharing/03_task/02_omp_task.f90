@@ -1,0 +1,17 @@
+PROGRAM TASK
+
+INTEGER TID, OMP_GET_THREAD_NUM
+
+!$OMP PARALLEL PRIVATE(TID)
+      TID = OMP_GET_THREAD_NUM()
+!$OMP DO
+      DO I=1, 9
+         IF(I <= 9) NS=3
+         IF(I <= 6) NS=2
+         IF(I <= 3) NS=1
+         PRINT*, I,'th SLEEP ', NS ,' SEC', '  TID =', TID
+         CALL SLEEP(NS)
+      ENDDO
+!$OMP END PARALLEL
+
+ENDPROGRAM
