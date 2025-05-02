@@ -45,6 +45,23 @@ module use ~/spack/share/spack/lmod/linux*/Core
 module avail gcc
 ```
 
+## Install nvhpc
+```
+spack install nvhpc
+module use $(spack location -i nvhpc)/modulefiles
+module avail nvhpc
+```
+
+## Install OpenMPI with AOCC
+```
+spack install openmpi %aocc fabrics=cma
+#spack install openmpi %aocc fabrics=cma,ucx #cma for internode ,ucx for multinode (communication)
+spack module lmod refresh --delete-tree -y
+module use ~/spack/share/spack/lmod/linux*/Core
+module spider openmpi
+module load aocc openmpi
+```
+
 ## env.sh
 ```
 source ~/spack/share/spack/setup-env.sh
