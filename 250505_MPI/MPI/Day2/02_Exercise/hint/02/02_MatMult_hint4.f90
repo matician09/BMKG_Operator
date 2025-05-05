@@ -12,7 +12,6 @@ program matmul
    call mpi_comm_rank(mpi_comm_world,mype,ierr)
    call mpi_comm_size(mpi_comm_world,nprocs,ierr)
 
-   call seed(2020)
    do j = 1,n
    do i = 1,n
       call random_number(A(i,j))
@@ -34,6 +33,7 @@ program matmul
    enddo
    write(*,*) 'Sum of C =', sum(D), mype
    endif
+   call mpi_finalize(ierr)
 
 end program matmul
 
