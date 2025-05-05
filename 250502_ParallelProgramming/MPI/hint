@@ -1,0 +1,5 @@
+module load aocc openmpi
+pwd
+mpif90 MPI_struct_04_hello_mpi_size.f90 -o mpi_hello.out
+mpirun -n 4 ./mpi_hello.out
+mpirun -n 2 ./mpi_hello.out

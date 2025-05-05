@@ -1,0 +1,5 @@
+source ~/env.sh
+module load aocc
+flang -fopenmp ./pi.f90
+export OMP_NUM_THREADS=1 ; ./a.out
+export OMP_NUM_THREADS=4 ; ./a.out
