@@ -69,3 +69,11 @@ source $(spack location -i lmod)/lmod/lmod/init/bash
 module use ${SPACK_ROOT}/share/spack/lmod/linux-ubuntu22.04-x86_64/Core
 # linux-ubuntu* : It may need to be changed depending on your environment.
 ```
+
+## Install pyomp and mpi4py with conda
+```
+conda create -n hybrid
+conda activate hybrid
+conda install -c python-for-hpc -c conda-forge pyomp
+conda install -c conda-forge mpi4py
+```
