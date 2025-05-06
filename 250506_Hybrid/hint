@@ -1,0 +1,5 @@
+export OMP_NUM_THREADS=4 ; time python ./pi_pyomp.py
+
+time mpirun -n 4 python ./pi_mpi4py.py
+
+export OMP_NUM_THREADS=2 ; time mpirun -n 2 python ./pi_pyomp.py
