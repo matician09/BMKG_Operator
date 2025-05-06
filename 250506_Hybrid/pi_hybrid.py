@@ -16,7 +16,7 @@ def main():
     rank = comm.Get_rank()
     size = comm.Get_size()
 
-    num_steps = 100000000
+    num_steps = 10000000
     step = 1.0 / num_steps
 
     # range for MPI tasks

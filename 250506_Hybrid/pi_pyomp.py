@@ -13,5 +13,5 @@ def calc_pi(num_steps):
     pi = step * red_sum
     return pi
 
-print("pi =", calc_pi(10000000000))
+print("pi =", calc_pi(10000000))
 
