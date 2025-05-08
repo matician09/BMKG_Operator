@@ -1,0 +1,9 @@
+conda create –n ai-models pip
+conda activate ai-models
+pip install ai-models-panguweather
+pip install onnxruntime # For CPU-only System
+wget https://get.ecmwf.int/repository/test-data/ai-models/pangu-weather/pangu_weather_24.onnx
+wget https://get.ecmwf.int/repository/test-data/ai-models/pangu-weather/pangu_weather_6.onnx
+# ECMWF CDS API KEY SETTING
+ai-models --input cds --date 20250101 --lead-time 24 panguweather
+
